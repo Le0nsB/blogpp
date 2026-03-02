@@ -4,16 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jauns ieraksts</title>
+  <link rel="stylesheet" href="/blog.css">
 </head>
 <body>
-  <h1>Izveidot ierakstu</h1>
+  <main class="container">
+    <h1>Izveidot ierakstu</h1>
 
-  <form action="/posts" method="POST">
-    <label for="body">Saturs</label><br>
-    <textarea id="body" name="body" rows="8" cols="50" required></textarea><br><br>
-    <button type="submit">Saglabāt</button>
-  </form>
+    <section class="card">
+      <form action="/posts" method="POST">
+        <label for="body">Saturs</label>
+        <textarea id="body" name="body" required></textarea>
+        <button type="submit">Saglabāt</button>
+      </form>
+    </section>
 
-  <p><a href="/">Atpakaļ uz sarakstu</a></p>
+    <p><a href="/">Atpakaļ uz sarakstu</a></p>
+  </main>
 </body>
 </html>

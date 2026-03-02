@@ -4,20 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ieraksts</title>
+  <link rel="stylesheet" href="/blog.css">
 </head>
 <body>
-  <h1>Ieraksts #<?= htmlspecialchars((string)($post->id ?? '')) ?></h1>
+  <main class="container">
+    <h1>Ieraksts #<?= htmlspecialchars((string)($post->id ?? '')) ?></h1>
 
-  <p><?= nl2br(htmlspecialchars($post->body ?? $post->content ?? $post->text ?? '')) ?></p>
+    <article class="card">
+      <p><?= nl2br(htmlspecialchars($post->body ?? $post->content ?? $post->text ?? '')) ?></p>
+    </article>
 
-  <p>
-    <a href="/posts/<?= urlencode((string)($post->id ?? '')) ?>/edit">Rediģēt</a>
-  </p>
+    <div class="actions">
+      <a href="/posts/<?= urlencode((string)($post->id ?? '')) ?>/edit">Rediģēt</a>
 
-  <form action="/posts/<?= urlencode((string)($post->id ?? '')) ?>/delete" method="POST">
-    <button type="submit">Dzēst</button>
-  </form>
+      <form action="/posts/<?= urlencode((string)($post->id ?? '')) ?>/delete" method="POST">
+        <button type="submit">Dzēst</button>
+      </form>
+    </div>
 
-  <p><a href="/">Atpakaļ uz sarakstu</a></p>
+    <p><a href="/">Atpakaļ uz sarakstu</a></p>
+  </main>
 </body>
 </html>
